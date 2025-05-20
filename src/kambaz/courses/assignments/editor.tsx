@@ -5,7 +5,7 @@ import { Link, useParams, useLocation} from "react-router-dom";
 import * as db from "../../database";
 
 export default function AssignmentEditor() {
-  const { aid, cid } = useParams();
+  const { aid } = useParams();
   const assignments = db.assignments;
   const { pathname } = useLocation();
 
