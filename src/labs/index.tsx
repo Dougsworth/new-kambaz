@@ -8,7 +8,7 @@ import Lab3 from './lab3';
 export default function Labs() {
   return (
     <div id="wd-labs">
-      <h1>Labs</h1>
+      <h1>Labs A2 Assignment</h1>
       <h3>Anissa Vaughn</h3>
       <TOC />
       <Routes>
