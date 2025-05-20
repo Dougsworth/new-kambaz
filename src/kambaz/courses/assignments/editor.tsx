@@ -2,7 +2,7 @@ import { Form, Col, Button, Row, Card } from "react-bootstrap";
 import { FormGroup, FormControl, FormLabel, FormSelect } from "react-bootstrap";
 import { Link, useParams, useLocation} from "react-router-dom";
 // import { useState, useEffect } from "react";
-import * as db from "../../database";
+import * as db from "../../Database";
 
 export default function AssignmentEditor() {
   const { aid } = useParams();

@@ -1,9 +1,9 @@
-import Lab1 from './lab1';
+import Lab1 from './Lab1';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import TOC from './toc';
-import Lab2 from './lab2';
-import Lab3 from './lab3';
-import Lab4 from './lab4';
+import Lab2 from './Lab2';
+import Lab3 from './Lab3';
+import Lab4 from './Lab4';
 import store from "./store";
 import { Provider } from "react-redux";
 

@@ -5,7 +5,7 @@ import AssignmentControlButtons from "./AssignmentControlButtons";
 import { BsGripVertical } from 'react-icons/bs'
 import { TfiPencilAlt } from "react-icons/tfi";
 import { useParams } from "react-router";
-import * as db from "../../database";
+import * as db from "../../Database";
 
 export default function Assignments() {
     const { cid } = useParams();
