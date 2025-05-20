@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteTodo, setTodo } from "./todosReducer";
 
-export default function TodoItem( {todo}) {
+export default function TodoItem( {todo}: {todo: any}) {
     // const { todo } = useSelector((state: any) => state.todosReducer);
     const dispatch = useDispatch();
     return (

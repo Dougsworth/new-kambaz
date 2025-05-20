@@ -4,8 +4,8 @@ import Dashboard from "./dashboard";
 import KambazNavigation from "./navigation";
 import Courses from "./courses/courses-index";
 import "./styles.css";
-import React, { useState } from "react";
-import * as db from "../database";
+import { useState } from "react";
+import * as db from "./database";
 import { v4 as uuidv4 } from "uuid";
 
 
@@ -13,7 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function Kambaz() {
   const [courses, setCourses] = useState<any[]>(db.courses);
   const [course, setCourse] = useState<any>({
-    _id: "1234", name: "New Course", number: "New Number",
+    _id: "1234", name: "New Course", number: "New Number", image: "Aerodynamics.png",
     startDate: "2023-09-10", endDate: "2023-12-15", description: "New Description",
   });
   const addNewCourse = () => {
