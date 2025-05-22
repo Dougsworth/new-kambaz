@@ -11,9 +11,9 @@ export default function App() {
     <Provider store={store}>
       <div>
         <Routes>
-          <Route path="/" element={<Navigate to="kambaz" />} />
-          <Route path="/labs/*" element={<Labs />} />
-          <Route path="/kambaz/*" element={<Kambaz />} />
+          <Route path="/" element={<Navigate to="Kambaz" />} />
+          <Route path="/Labs/*" element={<Labs />} />
+          <Route path="/Kambaz/*" element={<Kambaz />} />
         </Routes>
       </div>
     </Provider>
