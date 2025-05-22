@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import {Card, Button} from "react-bootstrap"
 import { useSelector } from "react-redux";
 import * as db from "../Database";
+import { useDispatch } from "react-redux";
+import { enrollment } from "../Kambaz/Account/reducer";
+import { useState } from "react";
+
 
 /*
 
@@ -19,6 +23,8 @@ import * as db from "../Database";
 
 */
 
+
+
 export default function Dashboard(
   { courses, course, setCourse, addNewCourse,
     deleteCourse, updateCourse }: {
@@ -28,7 +34,7 @@ export default function Dashboard(
 ) {
 
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const { enrollments }: {enrollments: any[]} = db; // 
+  const { enrollments }: {enrollments: any[]} = db; 
   
   return (
     <div id="wd-dashboard">
@@ -98,4 +104,5 @@ export default function Dashboard(
         </div>
         </div>
       </div>
-  );}
+  );
+}

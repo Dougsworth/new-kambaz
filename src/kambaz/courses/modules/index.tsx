@@ -3,12 +3,13 @@ import ModuleControlButtons from "./ModuleControlButtons";
 import LessonControlButtons from "./LessonControlButtons";
 import { BsGripVertical } from 'react-icons/bs'
 import { useParams } from "react-router";
-// import * as db from "../../Database";
 import { useState } from "react";
-// import { v4 as uuidv4 } from "uuid";
 import { addModule, editModule, updateModule, deleteModule } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 
+// import { add } from "../../../Labs/Lab3/Math";
+// import * as db from "../../Database";
+// import { v4 as uuidv4 } from "uuid";
 
 export default function Modules() {
     const { cid } = useParams();
@@ -18,7 +19,9 @@ export default function Modules() {
     
     return (
         <div>
-            <ModulesControls moduleName={moduleName} setModuleName={setModuleName}
+            <ModulesControls 
+                moduleName={moduleName} 
+                setModuleName={setModuleName}
                 addModule={() => {
                     dispatch(addModule({ name: moduleName, course: cid }));
                     setModuleName("");
@@ -42,7 +45,8 @@ export default function Modules() {
                             )} 
                             <ModuleControlButtons moduleId={module._id}
                                 deleteModule={(moduleId) => {dispatch(deleteModule(moduleId));}}
-                                editModule={(moduleId) => dispatch(editModule(moduleId))} />   
+                                editModule={(moduleId) => dispatch(editModule(moduleId))} 
+                            />   
                         </div>
                         {module.lessons && (
                         <ul className="wd-lessons list-group rounded-0">
@@ -56,4 +60,5 @@ export default function Modules() {
                 }
             </ul>
       </div>      
-    );}
+    );
+}

@@ -1,8 +1,8 @@
-import { Form, Col, Button, Row, Card } from "react-bootstrap";
-import { FormGroup, FormControl, FormLabel, FormSelect } from "react-bootstrap";
-import { Link, useParams, useLocation} from "react-router-dom";
+// import { Form, Col, Button, Row, Card } from "react-bootstrap";
+// import { FormGroup, FormControl, FormLabel, FormSelect } from "react-bootstrap";
+// import { Link, useParams, useLocation} from "react-router-dom";
 // import { useState, useEffect } from "react";
-import * as db from "../../Database";
+// import * as db from "../../Database";
 
 /*
 
@@ -13,6 +13,36 @@ import * as db from "../../Database";
 - Clicking Save updates the assignment's fields and navigates back to the Assignments screen with the updated assignment values. Clicking Cancel does not update the assignment, and navigates back to the Assignments screen which shows the assignments unchanged.
 
 */
+
+
+export default function AssignmentEditor({ dialogTitle, assignmentName, setAssignmentName, addAssignment }:
+    { dialogTitle: string; assignmentName: string; setAssignmentName: (name: string) => void; addAssignment: () => void; }) {
+        return (
+            <div id="wd-add-assignment-dialog" className="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                            {dialogTitle} </h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div className="modal-body">
+                            <input className="form-control" defaultValue={assignmentName} placeholder="Assignment Name"
+                                onChange={(e) => setAssignmentName(e.target.value)}/>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                                Cancel </button>
+                            <button onClick={addAssignment} type="button" data-bs-dismiss="modal" className="btn btn-danger">
+                                Add Assignment </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    /*
 
 export default function AssignmentEditor() {
   const { aid } = useParams();
@@ -133,3 +163,5 @@ export default function AssignmentEditor() {
     </div>
   );
 }
+
+*/
