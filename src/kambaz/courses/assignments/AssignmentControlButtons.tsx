@@ -1,3 +1,21 @@
+// latest working code
+
+
+import { IoEllipsisVertical } from "react-icons/io5";
+import GreenCheckmark from "./GreenCheckmark";
+
+export default function AssignmentControlButtons() {
+  return (
+    <div className="float-end">
+      <GreenCheckmark />
+      <IoEllipsisVertical className="fs-4" />
+    </div> );}
+    
+    
+/*
+
+my attempt
+
 import { IoEllipsisVertical } from "react-icons/io5";
 import GreenCheckmark from "./GreenCheckmark";
 import { FaTrash } from "react-icons/fa";
@@ -18,3 +36,5 @@ export default function AssignmentControlButtons(
     </div>
   );
 }
+
+*/
