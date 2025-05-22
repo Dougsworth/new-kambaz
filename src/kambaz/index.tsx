@@ -1,13 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Account from "./Account";
-import Dashboard from "./Dashboard";
-import KambazNavigation from "./Navigation";
-import Courses from "./Courses";
+import Account from "./account";
+import Dashboard from "./dashboard";
+import KambazNavigation from "./navigation";
+import Courses from "./courses";
 import "./styles.css";
 import { useState } from "react";
-import * as db from "./Database";
+import * as db from "./database";
 import { v4 as uuidv4 } from "uuid";
-import ProtectedRoute from "./Account/ProtectedRoute";
+import ProtectedRoute from "./account/ProtectedRoute";
 
 
 

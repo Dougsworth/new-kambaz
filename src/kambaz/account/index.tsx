@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Signin from "./Signin";
-import Profile from "./Profile";
-import Signup from "./Signup";
-import AccountNavigation from "./Navigation";
+import Signin from "./signin";
+import Profile from "./profile";
+import Signup from "./signup";
+import AccountNavigation from "./navigation";
 import { useSelector } from "react-redux";
 
 export default function Account() {

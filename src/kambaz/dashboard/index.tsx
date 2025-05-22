@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import {Card, Button} from "react-bootstrap"
 import { useSelector } from "react-redux";
-import * as db from "../Database";
-import { useDispatch } from "react-redux";
-import { enrollment } from "../Kambaz/Account/reducer";
-import { useState } from "react";
+import * as db from "../database";
+// import { useDispatch } from "react-redux";
+// import { enrollment } from "../Kambaz/Account/reducer";
+// import { useState } from "react";
 
 
 /*

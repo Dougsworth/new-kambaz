@@ -1,6 +1,6 @@
-import Labs from "./Labs";
-import Kambaz from "./Kambaz";
-import store from "./Kambaz/store";
+import Labs from "./labs";
+import Kambaz from "./kambaz";
+import store from "./kambaz/store";
 import { Provider } from "react-redux";
 
 import { HashRouter, Route, Routes, Navigate } from "react-router-dom";

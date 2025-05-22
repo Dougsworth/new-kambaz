@@ -1,3 +1,26 @@
+// latest working code
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  currentUser: null,
+};
+
+const accountSlice = createSlice({
+  name: "account",
+  initialState,
+  reducers: {
+    setCurrentUser: (state, action) => {
+      state.currentUser = action.payload;
+    },
+  },
+});
+
+export const { setCurrentUser } = accountSlice.actions;
+export default accountSlice.reducer;
+
+
+/* ATTEMPTED CODE
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -10,6 +33,7 @@ const initialState = {
     reducers: {
       setCurrentUser: (state, action) => {
         state.currentUser = action.payload;
+
       },
       enrollment: (state, action) => {
         const courseId = action.payload;
@@ -28,3 +52,4 @@ const initialState = {
   export const { setCurrentUser, enrollment } = accountSlice.actions;
   export default accountSlice.reducer;
   
+*/

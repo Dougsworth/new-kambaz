@@ -1,5 +1,6 @@
-import Modules from "../Modules";
+import Modules from "../modules";
 import CourseStatus from "./status";
+
 export default function Home() {
     return (
         <div className="d-flex" id="wd-home">
