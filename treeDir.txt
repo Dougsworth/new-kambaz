@@ -1,0 +1,43 @@
+src/Kambaz
+├── Account
+│   ├── index.tsx
+│   └── Navigation.tsx
+│   ├── Profile.tsx
+│   └── ProtectedRoute.tsx
+│   ├── reducer.ts
+│   └── Signin.tsx
+│   └── Signup.tsx
+├── Courses
+│   ├── index.tsx
+│   └── Navigation.tsx
+│   ├── Assignments
+│   │   ├── AssignmentControlButtons.tsx
+│   │   └── AssignmentControls.tsx
+│   │   ├── editor.tsx
+│   │   └── index.tsx
+│   │   └── reducer.ts
+│   └── Home
+│   │   ├── status.tsx
+│   │   └── index.tsx
+│   ├── Modules
+│   │   ├── ModuleControlButtons.tsx
+│   │   └── ModuleControls.tsx
+│   │   ├── ModuleEditor.tsx
+│   │   └── index.tsx
+│   │   └── reducer.ts
+│   │   └── LessonControlButtons.tsx
+│   └── People
+│       └── table.tsx
+├── Dashboard
+│   ├── index.tsx
+└── Database
+│   ├── assignments.json
+│   └── courses.json
+│   ├── enrollments.json
+│   ├── index.ts
+│   └── modules.json
+│   └── users.json
+└── index
+└── Navigation
+└── store
+└── style.css
