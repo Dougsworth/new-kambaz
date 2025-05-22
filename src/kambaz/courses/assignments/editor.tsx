@@ -4,6 +4,16 @@ import { Link, useParams, useLocation} from "react-router-dom";
 // import { useState, useEffect } from "react";
 import * as db from "../../Database";
 
+/*
+
+- The AssignmentEditor should allow editing at least the following fields: name, description, points, due date, available from date, and available until date.
+- Clicking Save creates the new assignment and adds it to the assignments array state variable, navigates to the Assignments screen, which must now contain the newly created assignment.
+- Clicking Cancel does not create the new assignment, and navigates back to the Assignments screen, without the new assignment.
+- The AssignmentsEditor screen should allow editing the same fields listed earlier for corresponding assignment.
+- Clicking Save updates the assignment's fields and navigates back to the Assignments screen with the updated assignment values. Clicking Cancel does not update the assignment, and navigates back to the Assignments screen which shows the assignments unchanged.
+
+*/
+
 export default function AssignmentEditor() {
   const { aid } = useParams();
   const assignments = db.assignments;

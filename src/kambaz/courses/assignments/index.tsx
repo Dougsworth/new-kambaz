@@ -7,6 +7,17 @@ import { TfiPencilAlt } from "react-icons/tfi";
 import { useParams } from "react-router";
 import * as db from "../../Database";
 
+/*
+
+- Clicking the + Assignment button navigates to the AssignmentEditor screen
+- Using the example of deleting modules, add a Delete button or trash icon to the right of each assignment.
+- Clicking Delete on an assignment pops up a dialog asking if you are sure you want to remove the assignment.
+- Clicking Yes or Ok, dismisses the dialog, removes the assignment, and updates the Assignments screen without the deleted assignment.
+- Clicking No or Cancel, dismisses the dialog without removing the assignment
+- Clicking on an assignment in the Assignments screen navigates to the AssignmentsEditor screen, displaying the assignment's name, description, points, due date, available from date, and available until date of the corresponding assignment.
+
+*/
+
 export default function Assignments() {
     const { cid } = useParams();
     const assignments = db.assignments;

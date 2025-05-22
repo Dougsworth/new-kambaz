@@ -3,6 +3,22 @@ import {Card, Button} from "react-bootstrap"
 import { useSelector } from "react-redux";
 import * as db from "../Database";
 
+/*
+
+- if the current user's role is Student, they have a blue Enrollments button at the top right of the screen. 
+- Clicking the Enrollments button displays all the the courses. 
+- Clicking it again only shows the courses a student is enrolled in. 
+- Courses that the student is enrolled in should provide a red Unenroll button 
+- courses that the student is not enrolled in should provide a green Enroll button. 
+- When a student click's the Unenroll or Enroll button the enrollment status must actually change and the buttons should toggle to reflect the new state. 
+- If a student signs out, and then signs in again, the enrollment choices should still persist. 
+- If a user refreshes or reloads the page, the new enrollments are lost. 
+- Protect the route to a course so that only students enrolled in that course can navigate to the course, and stay in the Dashboard screen otherwise. 
+- All enrollment related buttons should only be visible to students. 
+- Create new or modify existing reducers and store as needed.
+
+*/
+
 export default function Dashboard(
   { courses, course, setCourse, addNewCourse,
     deleteCourse, updateCourse }: {
@@ -12,7 +28,7 @@ export default function Dashboard(
 ) {
 
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const { enrollments } = db;
+  const { enrollments }: {enrollments: any[]} = db; // 
   
   return (
     <div id="wd-dashboard">

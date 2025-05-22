@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
-import KambazNavigation from "./navigation";
-import Courses from "./Courses/courses-index";
+import KambazNavigation from "./Navigation";
+import Courses from "./Courses";
 import "./styles.css";
 import { useState } from "react";
 import * as db from "./Database";

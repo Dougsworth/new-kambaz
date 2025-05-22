@@ -1,10 +1,10 @@
-import CourseNavigation from "./navigation";
+import CourseNavigation from "./Navigation";
 import { FaAlignJustify } from "react-icons/fa";
 // import { courses } from "../Database";
 import { useParams, useLocation } from "react-router-dom";
 import Modules from "./Modules";
 import Home from "./Home"
-import Assignments from "./Assignments/assignment-index";
+import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/editor";
 import { Route, Routes } from "react-router";
 import PeopleTable from "./People/table";
