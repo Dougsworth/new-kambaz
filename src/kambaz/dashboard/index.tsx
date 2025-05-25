@@ -50,7 +50,6 @@ export default function Dashboard({
           id="wd-add-new-course-click"
           onClick={addNewCourse}
         >
-          {" "}
           Add
         </button>
         <button
@@ -73,9 +72,7 @@ export default function Dashboard({
         onChange={(e) => setCourse({ ...course, description: e.target.value })}
       />
       <hr />
-      <h2 id="wd-dashboard-published">
-        Published Courses ({courses.length})
-      </h2>{" "}
+      <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2>
       <hr />
       <div className="row" id="wd-dashboard-courses">
         <div className="row row-cols-1 row-cols-md-5 g-4">
@@ -92,52 +89,75 @@ export default function Dashboard({
             })
             .map((course) => (
               <div key={course._id} className="col" style={{ width: "300px" }}>
-                <Card>
+                <Card className="h-100">
+                  {/* Course image - clickable to navigate to course */}
                   <Link
                     to={`/Kambaz/Courses/${course._id}/Home`}
-                    className="wd-dashboard-course-link text-decoration-none text-dark"
+                    className="wd-dashboard-course-link text-decoration-none"
                   >
                     <Card.Img
                       src={`/images/${course.image}`}
                       variant="top"
                       width="100%"
                       height={160}
+                      style={{ objectFit: "cover" }}
                     />
-                    <Card.Body className="card-body">
-                      <Card.Title className="wd-dashboard-course-title text-nowrap overflow-hidden">
-                        {course.name}{" "}
-                      </Card.Title>
-                      <Card.Text
-                        className="wd-dashboard-course-description overflow-hidden"
-                        style={{ height: "100px" }}
-                      >
-                        {course.description}{" "}
-                      </Card.Text>
-                      <Button variant="primary"> Go </Button>
+                  </Link>
 
+                  <Card.Body className="d-flex flex-column">
+                    {/* Course title - also clickable */}
+                    <Link
+                      to={`/Kambaz/Courses/${course._id}/Home`}
+                      className="text-decoration-none text-dark"
+                    >
+                      <Card.Title className="wd-dashboard-course-title">
+                        {course.name}
+                      </Card.Title>
+                    </Link>
+
+                    {/* Course description */}
+                    <Card.Text
+                      className="wd-dashboard-course-description flex-grow-1"
+                      style={{
+                        overflow: "hidden",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        minHeight: "60px",
+                      }}
+                    >
+                      {course.description}
+                    </Card.Text>
+
+                    {/* Action buttons - separated from Link to work independently */}
+                    <div className="mt-auto">
+                      {/* Go button - navigates to course */}
+                      <Link
+                        to={`/Kambaz/Courses/${course._id}/Home`}
+                        className="btn btn-primary me-2"
+                      >
+                        Go
+                      </Link>
+
+                      {/* Edit button - sets current course for editing */}
                       <button
-                        onClick={(event) => {
-                          event.preventDefault();
-                          deleteCourse(course._id);
-                        }}
-                        className="btn btn-danger float-end"
+                        onClick={() => setCourse(course)}
+                        className="btn btn-warning me-2"
+                        id="wd-edit-course-click"
+                      >
+                        Edit
+                      </button>
+
+                      {/* Delete button - removes course from list */}
+                      <button
+                        onClick={() => deleteCourse(course._id)}
+                        className="btn btn-danger"
                         id="wd-delete-course-click"
                       >
                         Delete
                       </button>
-
-                      <button
-                        id="wd-edit-course-click"
-                        onClick={(event) => {
-                          event.preventDefault();
-                          setCourse(course);
-                        }}
-                        className="btn btn-warning me-2 float-end"
-                      >
-                        Edit
-                      </button>
-                    </Card.Body>
-                  </Link>
+                    </div>
+                  </Card.Body>
                 </Card>
               </div>
             ))}

@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Account from "./account";
 import Dashboard from "./dashboard";
 import KambazNavigation from "./navigation";
@@ -75,12 +76,42 @@ export default function Kambaz() {
                           src={`/images/${course.image}`}
                           className="card-img-top"
                           alt={course.name}
+                          style={{ height: "180px", objectFit: "cover" }}
                         />
                         <div className="card-body d-flex flex-column">
                           <h5 className="card-title">{course.name}</h5>
-                          <p className="card-text flex-grow-1">
+                          <p
+                            className="card-text flex-grow-1"
+                            style={{
+                              minHeight: "4rem",
+                              display: "-webkit-box",
+                              WebkitLineClamp: 3,
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                            }}
+                          >
                             {course.description}
                           </p>
+                          <div className="mt-auto pt-3">
+                            <Link
+                              to={`/Kambaz/Courses/${course._id}/Home`}
+                              className="btn btn-primary btn-sm me-2"
+                            >
+                              Go
+                            </Link>
+                            <button
+                              className="btn btn-warning btn-sm me-2"
+                              onClick={() => setCourse(course)}
+                            >
+                              Edit
+                            </button>
+                            <button
+                              className="btn btn-danger btn-sm"
+                              onClick={() => deleteCourse(course._id)}
+                            >
+                              Delete
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
